@@ -2,20 +2,49 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Mini Portfólio</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
-        body {background-color: #C71585;}
+        body {background-color: #C71585;
+        display: flex;
+        flex-direction: column;
+        }
         h1 {color: rgb(237, 255, 159);
-            font-size: 2 rem;
+            font-size: 2rem;
             align-items: left;
         }
+        h2 {color: rgb(152, 247, 247);
+            font-size: 1.6rem;
+            align-items: center;
+            border-radius: 10%;
+        }
         img {border-radius: 10%;}
+        input {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.4rem;
+            color: rgb(255, 60, 135);
+            margin-bottom: 1rem;
+        }
+        button {
+            font-size: 1.2rem;
+            width: 5rem;
+            border-radius: 15px;
+            color:rgb(230, 0, 134)
+        }
+    
     </style>
 </head>
 <body link="white" vlink="white">
-<a name="i"><h1><font face="cursive"><strong><em>Mini Portfólio</em></strong></h1></font></a><hr size="2" color="white">
-<hr width="50%" size="2" color="white"><p>
+<a name="i"><h1><font face="cursive"><strong><em>Mini Portfólio</em></strong></h1></font></a><hr align="center" width="100%" size="2" color="white"></hr>
+<hr align="center" width="50%" size="2" color="white"></hr><p>
 <center>
-    <img src = "missa.JPG" align="middle" width="28%" height="40%" border="2"/>
+    <img src = "missa.JPG" align="middle" width="50%" height="120%" border="2"/>
 </center></p></br>
 <p align="center"><font face="georgia" size="3" color="pink">
     <b>Olá, meu nome é Sâmia, sou estudante do curso de Desenvolvimento de Sistemas, nível técnico, turno noite, do IFPI.</br></b>
@@ -30,4 +59,36 @@
 <ul type="square">
 <li><a href="http://lattes.cnpq.br/4333058177953783"> Currículo Lattes</a></li> 
 <p align="center"><font face="cursive" size="3" color="khaki">
-	<b>Contato:</b> <u>samiadantas@hotmail.com</u></p>
+<b>Contato:</b> <u>samiadantas@hotmail.com</u></p>
+<h2 align="center">Vamos nos conhecer melhor?</h2>
+<center>
+<input 
+    id="caixa_nome" 
+    type="text" 
+    placeholder="Digita seu nome aqui..."
+/>
+<input 
+    id="caixa_ig" 
+    type="text" 
+    placeholder="Digita seu instagram aqui..."
+/>
+<button id="btn_enviar">Enviar</button>
+</center>
+<script>
+    const comp_btn_enviar = document.getElementById('btn_enviar');
+    const comp_caixa_nome = document.getElementById('caixa_nome');
+    const comp_caixa_ig = document.getElementById('caixa_ig');
+
+    comp_btn_enviar.onclick = () => {
+        const nome = comp_caixa_nome.value;
+        const ig = comp_caixa_ig.value;
+        const mensagem = 'Olá ' + nome + ', grata por compartilhar sua rede social (' + ig + '), mandarei convite em breve =)';
+
+        //console.log(mensagem);
+        alert(mensagem)
+        console.log(nome, ig);
+        };
+
+</script>
+</body>
+</html>
